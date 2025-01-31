@@ -1,50 +1,93 @@
-# React + TypeScript + Vite
+# SGM - Sistema de Gerenciamento Multimídia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SGM (Sistema de Gerenciamento Multimídia) é uma aplicação **full stack** desenvolvida para **upload e gerenciamento de arquivos multimídia**, como **imagens, vídeos e áudios** nos formatos mais utilizados.
 
-Currently, two official plugins are available:
+O sistema permite aos usuários armazenar, visualizar e organizar seus arquivos de forma simples e eficiente, com uma interface moderna e responsiva.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+O projeto foi construído utilizando as seguintes tecnologias e bibliotecas:
 
-- Configure the top-level `parserOptions` property like this:
+### **Frontend** (React + Vite)
+- **[React](https://react.dev/)** - Biblioteca para construção de interfaces
+- **[Vite](https://vitejs.dev/)** - Ferramenta de build otimizada para React
+- **[ShadCN](https://ui.shadcn.com/)** - Biblioteca de componentes estilizados
+- **[Tailwind CSS](https://tailwindcss.com/)** - Framework CSS utilitário
+- **[React Hook Form](https://react-hook-form.com/)** - Gerenciamento de formulários
+- **[Zod](https://zod.dev/)** - Validação de dados
+- **[Axios](https://axios-http.com/)** - Consumo de API
+- **Context API** - Gerenciamento de estado global
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### **Backend** (Configuração Dependente da API)
+- **Django** 
+- **Banco de dados** (PostgreSQL)
+
+---
+
+## 📸 Funcionalidades Principais
+
+- 📂 **Upload de arquivos** (imagens, vídeos e áudios)
+- 🗂️ **Organização e gestão de arquivos** por categorias
+- 🔍 **Busca e filtros para facilitar a navegação**
+- 📤 **Integração com API para armazenamento**
+- 🛠️ **Validação de formatos e tamanho de arquivos**
+- 🎨 **Interface responsiva e moderna**
+
+---
+
+## 🛠️ Como Executar o Projeto Localmente
+
+### **1️⃣ Clonar o Repositório**
+
+```sh
+git clone https://github.com/seu-usuario/SGM.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### **2️⃣ Acessar a Pasta do Projeto**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+cd SGM
 ```
+
+### **3️⃣ Instalar as Dependências**
+
+```sh
+npm install  # ou yarn install
+```
+
+### **4️⃣ Criar o Arquivo `.env`**
+Crie um arquivo `.env` na raiz do projeto e adicione a seguinte configuração:
+
+```
+VITE_BASE_URL=https://sua-api.com/api/v1
+```
+
+⚠️ **Substitua `https://sua-api.com/api/v1` pelo endpoint correto do backend.**
+
+### **5️⃣ Iniciar o Servidor de Desenvolvimento**
+
+```sh
+npm run dev  # ou yarn dev
+```
+
+A aplicação estará disponível em: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🌍 Deploy
+
+O projeto foi implantado e está disponível em:
+
+🔗 **[Acesse o SGM aqui](https://sistema-de-gerenciamento-multimidia.vercel.app/)
+
+Caso faça um **deploy manual na Vercel**, você pode rodar:
+
+```sh
+vercel --prod
+```
+
+---
+
+
