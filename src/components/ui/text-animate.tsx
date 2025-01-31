@@ -144,7 +144,8 @@ const defaultItemAnimationVariants: Record<
     container: defaultContainerVariants,
     item: {
       hidden: { opacity: 0, filter: "blur(10px)", y: 20 },
-      show: (delay: number) => ({
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      show: (_delay: number) => ({
         opacity: 1,
         filter: "blur(0px)",
         y: 0,
@@ -170,7 +171,8 @@ const defaultItemAnimationVariants: Record<
     container: defaultContainerVariants,
     item: {
       hidden: { opacity: 0, filter: "blur(10px)", y: -20 },
-      show: (delay: number) => ({
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      show: (_delay: number) => ({
         opacity: 1,
         filter: "blur(0px)",
         y: 0,
@@ -302,13 +304,17 @@ const defaultItemAnimationVariants: Record<
 
 export function TextAnimate({
   children,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   delay = 0,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   duration = 0.3,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   variants,
   className,
   segmentClassName,
   as: Component = "p",
   startOnView = true,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   once = false,
   by = "word",
   animation = "fadeIn",
