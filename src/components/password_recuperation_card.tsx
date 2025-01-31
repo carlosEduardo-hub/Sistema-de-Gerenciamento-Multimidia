@@ -72,7 +72,7 @@ export function PasswordRecuperationCard() {
         <div className="flex flex-col items-center mt-1">
           <span className="text-center w-full text-gray-400 text-sm">
             Retornar para{" "}
-            <a href="/" className="text-fulvoushover underline text-sm">
+            <a href="/login" className="text-fulvoushover underline text-sm">
               login
             </a>
           </span>
