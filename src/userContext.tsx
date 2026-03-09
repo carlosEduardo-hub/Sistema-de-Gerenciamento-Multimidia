@@ -14,15 +14,15 @@ interface User {
   profile_picture: string;
 }
 
-// Estado inicial do usuário
+// Estado inicial do usuário com dados mockados para visualização imediata
 const initialUserState: User = {
-  id: null,
-  email: '',
-  username: '',
-  name: '',
-  description: '',
-  date_joined: '',
-  date_of_birth: '',
+  id: 1,
+  email: 'usuario@teste.com',
+  username: 'usuario_teste',
+  name: 'Usuário de Teste',
+  description: 'Descrição do usuário de teste',
+  date_joined: '2024-01-01',
+  date_of_birth: '2000-01-01',
   profile_picture: '/robot_perfil.png',
 };
 
@@ -44,7 +44,11 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       const token = sessionStorage.getItem('token');
       const userId = sessionStorage.getItem('user_id');
 
-      if (!token || !userId) return; // Se não houver token ou userId, interrompe a busca
+      if (!token || !userId) {
+        // Se não houver token, mantemos o estado inicial (que já contém dados mockados)
+        setUser(initialUserState);
+        return; 
+      }
 
       // Adiciona o token ao cabeçalho da API
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
@@ -56,7 +60,8 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       setUser(response.data);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
-      console.error('Erro ao buscar dados do usuário:', error.response?.data || error.message);
+      console.error('Erro ao buscar dados do usuário (usando mock):', error.response?.data || error.message);
+      // Em caso de erro, usa o mock (initialUserState)
       setUser(initialUserState);
     }
   };

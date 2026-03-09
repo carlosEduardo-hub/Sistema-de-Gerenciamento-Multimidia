@@ -140,6 +140,14 @@ export function LoginCard() {
       >
         {isSubmitting ? <Loader className="animate-spin" /> : 'Entrar'}
       </button>
+
+      <button
+        type="button"
+        onClick={() => navigate("/dashboard")}
+        className="bg-gray-500 rounded font-semibold text-gray-100 h-10 hover:bg-gray-600 px-6 flex items-center justify-center mt-2"
+      >
+        Acessar sem login (Modo Visualização)
+      </button>
     </form>
   );
 }
